@@ -1,0 +1,1 @@
+%~dp0\cqhttp_win_x86_64\ -c %~dp0\cqhttp_win_x86_64\config.yml -w %~dp0\cqhttp_win_x86_64\
