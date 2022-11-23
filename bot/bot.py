@@ -11,7 +11,7 @@ if 'QBOT_DB' not in dblist:
     print('三秒后开始导入，请等待提示导入完成')
     time.sleep(3)
     
-    db = client['QB_DB']
+    db = client['QBOT_DB']
     apiuse_col = db['api_use_time']
     apiuse_dict = [
         {'api_name' : 'handrush', 'today' : '0', 'total' : '0'}, 
@@ -30,7 +30,7 @@ if 'QBOT_DB' not in dblist:
     time.sleep(0.5)
 
     sfz_col = db['sfz']
-    f = open('./bot/awesome/static/text/新8000w身份证.txt', 'r', encoding='UTF-8')
+    f = open('./awesome-bot/awesome/static/text/新8000w身份证.txt', 'r', encoding='UTF-8')
     n = 0
     for i in f:
         n = n + 1
@@ -43,7 +43,8 @@ if 'QBOT_DB' not in dblist:
 
     print('导入完成')
 else:
-    pass
+    print('数据库检查通过，准备运行')
+    time.sleep(3)
 
 nonebot.init(config)
 bot = nonebot.get_bot()
