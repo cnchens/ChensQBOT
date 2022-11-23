@@ -44,11 +44,11 @@ QQ交流群：281814041，入群问题填github即可
 <br>
 输入`@机器人名称 allcmd`获取所有可用命令
 <br>
-
+![87eed233f7bc6b4b96f805cc9713b7d](https://user-images.githubusercontent.com/116929900/203548805-48ac768b-ac3f-4e1b-adbc-dec8324ca557.jpg)
 <br>
 回复结果可能跟图片中的不同，具体以实际为准
 <br>
-[87eed233f7bc6b4b96f805cc9713b7d](https://user-images.githubusercontent.com/116929900/203548353-9b628977-091f-4a75-8f44-f844e0d7b791.jpg)
+
 <br>
 然后就慢慢摸索罢，这几个命令挺简单的，我都写了帮助文档
 
