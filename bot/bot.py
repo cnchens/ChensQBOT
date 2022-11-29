@@ -3,8 +3,13 @@ import nonebot
 import config
 import pymongo
 import time
+import json
 
-client = pymongo.MongoClient('mongodb://localhost:27017/')# mongodb连接地址
+f = open('config.json', 'r', encoding='utf-8')# 读取config
+json_res = json.load(f)
+mdb_conn = json_res['mdb_conn']# mongodb连接地址
+
+client = pymongo.MongoClient(mdb_conn)# mongodb连接地址
 dblist = client.list_database_names()
 if 'QBOT_DB' not in dblist:
     print('首次运行，准备创建数据库')
