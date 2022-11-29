@@ -1,0 +1,18 @@
+{
+    "mdb_conn" : "mongodb://192.168.1.114:27017/", 
+
+    "superusers" : [1836178267], 
+    "cmd_start" : "", 
+    "host" : "127.0.0.1", 
+    "port" : "32808", 
+    "api_root" : "http://127.0.0.1:32808", 
+
+    "enable_allcmd" : "true", 
+    "enable_time" : "true", 
+    "enable_passwords" : "true", 
+    "enable_finder" : "true", 
+    "enable_rdsfz" : "true", 
+    "enable_tfish" : "true", 
+    "enable_handrush" : "true", 
+    "enable_rdsimg" : "true"
+}
