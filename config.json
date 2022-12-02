@@ -2,7 +2,7 @@
     "mdb_conn" : "mongodb://192.168.1.114:27017/", 
 
     "superusers" : [], 
-    "cmd_start" : "", 
+    "cmd_start" : [""], 
     "host" : "127.0.0.1", 
     "port" : "32808", 
     "api_root" : "http://127.0.0.1:32808", 
