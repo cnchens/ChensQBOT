@@ -1,4 +1,4 @@
-# Chens_QBOT
+# ChensBOT
 基于Nonebot开发的QQ群机器人
 <br>
 学业繁忙，可能更新会慢点
