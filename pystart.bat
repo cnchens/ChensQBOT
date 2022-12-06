@@ -1,1 +1,0 @@
-python %~dp0\awesome-bot\bot.py
