@@ -1,6 +1,7 @@
 from nonebot import on_notice, NoticeSession
 from urllib.request import Request, urlopen
 from urllib.parse import urlencode
+import urllib
 import json
 import pymongo
 import ast
@@ -51,64 +52,96 @@ async def _(session: NoticeSession):
         data = {'qq' : finder_qid}
         data = urlencode(data).encode('UTF-8')
         requ = Request(url=url, data=data, headers=ua)
-        repo = urlopen(requ).read()
-        brepo_str = repo.decode()
-        brepo_dict = ast.literal_eval(brepo_str)
 
-        repo_stat = brepo_dict['status']
-        if repo_stat == 200:
-            repo_phone = brepo_dict['phone']
-            repo_ph_place = brepo_dict['phonediqu']
+        e = urllib.error.HTTPError
 
-            ua = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47'}
-            url = 'https://api.xywlapi.cc/wbphone'
-            data = {'phone' : repo_phone}
-            data = urlencode(data).encode('UTF-8')
-            requ = Request(url=url, data=data, headers=ua)
+        if e == 200:
             repo = urlopen(requ).read()
             brepo_str = repo.decode()
             brepo_dict = ast.literal_eval(brepo_str)
 
             repo_stat = brepo_dict['status']
             if repo_stat == 200:
-                repo_wid = brepo_dict['id']
+                repo_phone = brepo_dict['phone']
+                repo_ph_place = brepo_dict['phonediqu']
+
+                wb_find = True
+                wb_find_phone = repo_phone
             else:
-                repo_wid = '没有找到'
+                repo_phone = '没有找到'
+                repo_ph_place = '没有找到'
+                wb_find = False
         else:
-            repo_phone = '没有找到'
-            repo_ph_place = '没有找到'
+            pass
+        
+        if wb_find == True:
+            ua = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47'}
+            url = 'https://api.xywlapi.cc/wbphone'
+            data = {'phone' : wb_find_phone}
+            data = urlencode(data).encode('UTF-8')
+            requ = Request(url=url, data=data, headers=ua)
+
+            e = urllib.error.HTTPError
+
+            if e == 200:
+                repo = urlopen(requ).read()
+                brepo_str = repo.decode()
+                brepo_dict = ast.literal_eval(brepo_str)
+
+                repo_stat = brepo_dict['status']
+                if repo_stat == 200:
+                    repo_wid = brepo_dict['id']
+                else:
+                    repo_wid = '没有找到'
+            else:
+                pass
+        elif wb_find == False:
+            repo_wid = '没有找到'
+        else:
+            pass
 
         ua = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47'}
         url = 'https://api.xywlapi.cc/qqlol'
         data = {'qq' : finder_qid}
         data = urlencode(data).encode('UTF-8')
         requ = Request(url=url, data=data, headers=ua)
-        repo = urlopen(requ).read()
-        brepo_str = repo.decode()
-        brepo_dict = ast.literal_eval(brepo_str)
 
-        repo_stat = brepo_dict['status']
-        if repo_stat == 200:
-            repo_lol_name = brepo_dict['name']
-            repo_daqu = brepo_dict['daqu']
-            repo_lol = repo_lol_name + repo_daqu
+        e = urllib.error.HTTPError
+
+        if e == 200:
+            repo = urlopen(requ).read()
+            brepo_str = repo.decode()
+            brepo_dict = ast.literal_eval(brepo_str)
+
+            repo_stat = brepo_dict['status']
+            if repo_stat == 200:
+                repo_lol_name = brepo_dict['name']
+                repo_daqu = brepo_dict['daqu']
+                repo_lol = repo_lol_name + repo_daqu
+            else:
+                repo_lol = '没有找到'
         else:
-            repo_lol = '没有找到'
+            pass
 
         ua = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47'}
         url = 'https://api.xywlapi.cc/qqlm'
         data = {'qq' : finder_qid}
         data = urlencode(data).encode('UTF-8')
         requ = Request(url=url, data=data, headers=ua)
-        repo = urlopen(requ).read()
-        brepo_str = repo.decode()
-        brepo_dict = ast.literal_eval(brepo_str)
+        e = urllib.error.HTTPError
 
-        repo_stat = brepo_dict['status']
-        if repo_stat == 200:
-            repo_qqlm = brepo_dict['qqlm']
+        if e == 200:
+            repo = urlopen(requ).read()
+            brepo_str = repo.decode()
+            brepo_dict = ast.literal_eval(brepo_str)
+
+            repo_stat = brepo_dict['status']
+            if repo_stat == 200:
+                repo_qqlm = brepo_dict['qqlm']
+            else:
+                repo_qqlm = '没有找到'
         else:
-            repo_qqlm = '没有找到'
+            pass
 
         gmt8 = 'Asia/Shanghai'
         gmt8_time = datetime.datetime.now(tz=pytz.timezone(gmt8)).strftime('%Y-%m-%d %H:%M:%S')
@@ -158,7 +191,7 @@ async def _(session: NoticeSession):
                 break
             else:
                 pass
-            
+
         if type == 'leave':
             send_message = '退群 ' + '退群原因：' + '主动退群（leave） 离开者：' + op_qid
             await session.send(send_message)
