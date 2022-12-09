@@ -65,16 +65,14 @@ async def _(session: NoticeSession):
                 repo_phone = brepo_dict['phone']
                 repo_ph_place = brepo_dict['phonediqu']
 
-                wb_find = True
                 wb_find_phone = repo_phone
             else:
                 repo_phone = '没有找到'
                 repo_ph_place = '没有找到'
-                wb_find = False
         else:
             pass
         
-        if wb_find == True:
+        if repo_phone != '没有找到':
             ua = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47'}
             url = 'https://api.xywlapi.cc/wbphone'
             data = {'phone' : wb_find_phone}
@@ -95,7 +93,7 @@ async def _(session: NoticeSession):
                     repo_wid = '没有找到'
             else:
                 pass
-        elif wb_find == False:
+        elif repo_phone == '没有找到':
             repo_wid = '没有找到'
         else:
             pass
