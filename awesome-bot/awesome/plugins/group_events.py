@@ -47,6 +47,14 @@ async def _(session: NoticeSession):
             pass
 
         finder_qid = at_qid
+
+        gmt8_time = '无法获取'
+        repo_qqlm = '无法获取'
+        repo_phone = '无法获取'
+        repo_ph_place = '无法获取'
+        repo_wid = '无法获取'
+        repo_lol = '无法获取'
+        
         ua = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47'}
         url = 'https://api.xywlapi.cc/qqapi'
         data = {'qq' : finder_qid}
@@ -65,36 +73,26 @@ async def _(session: NoticeSession):
                 repo_phone = brepo_dict['phone']
                 repo_ph_place = brepo_dict['phonediqu']
 
-                wb_find_phone = repo_phone
-            else:
-                repo_phone = '没有找到'
-                repo_ph_place = '没有找到'
-        else:
-            pass
-        
-        if repo_phone != '没有找到':
-            ua = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47'}
-            url = 'https://api.xywlapi.cc/wbphone'
-            data = {'phone' : wb_find_phone}
-            data = urlencode(data).encode('UTF-8')
-            requ = Request(url=url, data=data, headers=ua)
+                ua = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.0.0 Safari/537.36 Edg/106.0.1370.47'}
+                url = 'https://api.xywlapi.cc/wbphone'
+                data = {'phone' : repo_phone}
+                data = urlencode(data).encode('UTF-8')
+                requ = Request(url=url, data=data, headers=ua)
 
-            e = urllib.error.HTTPError
+                e = urllib.error.HTTPError
 
-            if e == 200:
-                repo = urlopen(requ).read()
-                brepo_str = repo.decode()
-                brepo_dict = ast.literal_eval(brepo_str)
+                if e == 200:
+                    repo = urlopen(requ).read()
+                    brepo_str = repo.decode()
+                    brepo_dict = ast.literal_eval(brepo_str)
 
-                repo_stat = brepo_dict['status']
-                if repo_stat == 200:
-                    repo_wid = brepo_dict['id']
-                else:
-                    repo_wid = '没有找到'
+                    repo_stat = brepo_dict['status']
+                    if repo_stat == 200:
+                        repo_wid = brepo_dict['id']
+                    else:
+                        repo_wid = '没有找到'
             else:
                 pass
-        elif repo_phone == '没有找到':
-            repo_wid = '没有找到'
         else:
             pass
 
