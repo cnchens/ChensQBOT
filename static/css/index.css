@@ -1,9 +1,14 @@
-.ver{
+#version{
     right: 10%;
 }
 
-.imgtitle{
+.cbot_title{
     margin: auto;
     text-align: center;
     top: 20%;
+}
+
+#titleimg{
+    width: 200px;
+    height: 200px;
 }
