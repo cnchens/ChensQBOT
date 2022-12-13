@@ -1,15 +1,7 @@
-.navbar{
-    height: 100px;
-}
-
-#version{
-    right: 10%;
-}
-
 .cbot_title{
     margin: auto;
     text-align: center;
-    top: 20%;
+    top: 500px;
 }
 
 #titleimg{
