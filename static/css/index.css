@@ -8,8 +8,8 @@
     top: 20%;
 }
 
-#img-circle{
-    margin: auto;
+#titleimg{
+    border-radius: 10px;
     width: 200px;
     height: 200px;
 }
