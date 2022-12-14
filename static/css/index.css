@@ -1,8 +1,8 @@
 .cbot_title{
+    display: flex;
     margin: auto;
     width: 500px;
     height: 500px;
-    margin-top: 200px;
     text-align: center;
 }
 
