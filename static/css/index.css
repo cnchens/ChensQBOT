@@ -1,16 +1,11 @@
 .cbot_title{
     margin: auto;
     text-align: center;
-    position: absolute;
-    top: 500px;
+    position: static;
 }
 
 #titleimg{
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
-}
-
-#start_btn{
-    color: rgb(234, 82, 82);
+    width: 20px;
+    height: 20px;
 }
