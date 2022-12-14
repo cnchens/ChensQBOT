@@ -1,12 +1,13 @@
 .cbot_title{
     display: flex;
+    position: absolute;
     margin: auto;
     width: 500px;
     height: 500px;
     text-align: center;
 }
 
-img.cbot_title{
+#titleimg{
     border-radius: 50%;
     width: 200px;
     height: 200px;
