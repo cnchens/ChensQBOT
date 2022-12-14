@@ -1,9 +1,13 @@
-.cbot_title{
+.cbot_title_flex{
     display: flex;
-    position: absolute;
-    margin: auto;
     width: 500px;
     height: 500px;
+}
+
+.cbot_title{
+    margin: auto;
+    width: auto;
+    height: auto;
     text-align: center;
 }
 
