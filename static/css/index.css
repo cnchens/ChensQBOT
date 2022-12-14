@@ -1,6 +1,7 @@
 .cbot_title{
     display: flex;
     margin: auto;
+    text-align: center;
 }
 
 #titleimg{
