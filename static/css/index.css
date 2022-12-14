@@ -1,11 +1,14 @@
 .cbot_title{
     margin: auto;
+    width: auto;
     text-align: center;
-    position: static;
+    position: absolute;
+    top: 200px;
 }
 
 #titleimg{
+    margin: auto;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 200px;
+    height: 200px;
 }
