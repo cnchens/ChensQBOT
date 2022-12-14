@@ -3,3 +3,7 @@ body{
     border-color: rgb(255, 255, 255);
     background-color: rgb(24, 24, 24);
 }
+
+#nav_top{
+    position: static;
+}
