@@ -2,6 +2,8 @@
     display: flex;
     width: 500px;
     height: 500px;
+    margin: auto;
+    text-align: center;
 }
 
 .cbot_title{
