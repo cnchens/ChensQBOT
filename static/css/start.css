@@ -12,14 +12,12 @@
 .content-left {
     width: 19%;
     height: 600px;
-    background-color: #1c232f;
     float: left;
 }
 
 .content-right {
     width: 81%;
     height: 600px;
-    background-color: #6495ED;
     float: left;
 }
 
@@ -34,7 +32,6 @@
     height: 50px;
     line-height: 50px;
     text-align: center;
-    color: white;
     /*去掉a下默认下划线*/
     text-decoration: none;
 }
@@ -43,7 +40,6 @@
 .seg {
     height: 1px;
     width: 100%;
-    background-color: black;
 }
 
 .nav {
@@ -55,7 +51,6 @@
 .nav-title {
     height: 40px;
     width: 100%;
-    color: white;
     text-align: center;
     line-height: 40px;
     cursor: pointer;
@@ -65,7 +60,6 @@
 .nav-content {
     width: 100%;
     height: 100%;
-    background-color: #0C1119;
 }
 
 /*子标题的样式*/
@@ -73,7 +67,6 @@
     display: block;
     width: 100%;
     height: 30px;
-    color: #CCCCCC;
     text-decoration: none;
     text-align: center;
     line-height: 30px;
@@ -82,8 +75,7 @@
 
 /*子标题鼠标经过时的改变颜色*/
 .nav-content > a:hover {
-    color: #FFFFFF;
-    background-color: #12040c;
+    background-color: rgb(255, 255, 255);
 }
 
 /*内容区*/
