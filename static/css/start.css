@@ -1,12 +1,15 @@
 .main .main_left{
     height: 100%;
-    width:210px;
-    float:left;
-    background-color: red;
+    width: 400px;
+    float: left;
 }
 
 .main .main_right{
     height: 100%;
-    margin-left:210px;
-    background-color: yellow;
+    margin-left: 400px;
+}
+
+.s2_alert1{
+    width: 300px;
+    height: auto;
 }
