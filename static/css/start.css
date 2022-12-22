@@ -32,6 +32,7 @@
     height: 50px;
     line-height: 50px;
     text-align: center;
+    color: white;
     /*去掉a下默认下划线*/
     text-decoration: none;
 }
@@ -51,6 +52,7 @@
 .nav-title {
     height: 40px;
     width: 100%;
+    color: white;
     text-align: center;
     line-height: 40px;
     cursor: pointer;
@@ -67,6 +69,7 @@
     display: block;
     width: 100%;
     height: 30px;
+    color: #CCCCCC;
     text-decoration: none;
     text-align: center;
     line-height: 30px;
@@ -75,14 +78,19 @@
 
 /*子标题鼠标经过时的改变颜色*/
 .nav-content > a:hover {
-    background-color: rgb(255, 255, 255);
+    color: #FFFFFF;
+    background-color: #12040c;
 }
 
 /*内容区*/
 .content-right{
-    font-size: 50px;
-    line-height: 600px;
     text-align: center;
+}
+
+.mid_line{
+    border: 1px;
+    float: left;
+    height: 100%;
 }
 
 .s2_alert1{
