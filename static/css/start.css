@@ -1,3 +1,7 @@
+body{
+    position: absolute;
+}
+
 ul.nav-tabs{
     width: 100%;
     margin-top: 20px;
@@ -24,7 +28,6 @@ ul.nav-tabs li a{
 ul.nav-tabs li.active a, ul.nav-tabs li.active a:hover{
     color: #fff;
     background: #0088cc;
-    border: 1px solid #0088cc;
 }
 
 ul.nav-tabs li:first-child a{
@@ -37,4 +40,15 @@ ul.nav-tabs li:last-child a{
 
 ul.nav-tabs.affix{
     top: 30px;
+}
+
+.nav_title{
+    width: 50px;
+    height: 100%;
+    float: left;
+}
+
+.nav_text{
+    height: 100%;
+    margin-left: 50px;
 }
