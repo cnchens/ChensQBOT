@@ -43,12 +43,13 @@ ul.nav-tabs.affix{
 }
 
 .nav_title{
-    width: 50px;
+    width: 100px;
     height: 100%;
     float: left;
 }
 
 .nav_text{
     height: 100%;
-    margin-left: 50px;
+    margin-left: 100px;
+    margin-right: 0px;
 }
