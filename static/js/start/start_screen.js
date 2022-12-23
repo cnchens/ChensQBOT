@@ -4,7 +4,7 @@ var inner_s1=`
 <p>ChensBOT是基于Nonebot开发的一款机器人，整体上使用Python语言，以及MongoDB数据库进行数据的存取</p>
 `
 
-var iner_s2=`
+var inner_s2=`
 <div class="alert alert-danger alert_div">
     <p>注意：目前仅提供Windows x86_64系统的执行程序，需要适配其他系统请自行下载源码</p>
 </div>
