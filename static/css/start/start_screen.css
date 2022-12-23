@@ -1,5 +1,6 @@
-.s2_alert{
-    width: 500px;
+.alert_div{
+    width: 1000px;
     height: auto;
     position: absolute;
+    margin: auto;
 }
