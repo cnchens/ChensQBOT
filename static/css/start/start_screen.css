@@ -1,4 +1,5 @@
-.s2_alert1{
-    width: 200px;
+.s2_alert{
+    width: 500px;
     height: auto;
+    position: absolute;
 }
