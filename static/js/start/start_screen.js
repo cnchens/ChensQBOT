@@ -26,6 +26,10 @@ var inner_s4=`
 inner_s4
 `
 
+var inner_s5=`
+inner_s5
+`
+
 document.getElementById("screen_text").innerHTML=inner_s1;
 
 document.getElementById("section-1").onclick=function () {change_sc1()};
@@ -46,4 +50,9 @@ function change_sc3() {
 document.getElementById("section-4").onclick=function () {change_sc4()};
 function change_sc4() {
     document.getElementById("screen_text").innerHTML=inner_s4;
+};
+
+document.getElementById("section-5").onclick=function () {change_sc5()};
+function change_sc5() {
+    document.getElementById("screen_text").innerHTML=inner_s5;
 };
