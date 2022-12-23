@@ -1,5 +1,5 @@
 var para=document.createElement("p");
-var node=document.createTextNode("简介简介简介");
+var node=document.createTextNode("这是一个新段落。");
 para.appendChild(node);
 var element=document.getElementById("screen_text");
 element.appendChild(para);
