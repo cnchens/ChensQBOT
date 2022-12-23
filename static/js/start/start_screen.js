@@ -1,19 +1,3 @@
-marked.setOptions({
-    renderer: new marked.Renderer(),
-    gfm: true,
-    tables: true,
-    breaks: false,
-    pedantic: false,
-    sanitize: false,
-    smartLists: true,
-    smartypants: false,
-    highlight: function (code,lang) {
-         return hljs.highlightAuto(code,[lang]).value;
-    }
-});
-
-let inner_s2 = marked($("https://cnchens.github.io/ChensBOT/static/markdown/start/start_sc2.md").text());
-
 var inner_s1=`
 <h2>简介</h2>
 <hr>
@@ -21,7 +5,17 @@ var inner_s1=`
 `
 
 var iner_s2=`
-
+<div class="alert alert-danger alert_div">
+    <p>注意：目前仅提供Windows x86_64系统的执行程序，需要适配其他系统请自行下载源码</p>
+</div>
+<p>在安装前请确认已经配置好Python3.7+和MongoDB环境</p>
+<p>在<a href="https://github.com/cnchens/ChensBOT/releases">Releases</a>中下载最新的压缩包并解压</p>
+<p>如果不需要额外配置的话，首先运行modinstall.bat等待安装完成</p>
+<p>然后分别运行pystart.bat和cqstart.bat</p>
+<div class="alert alert-warning alert_div">
+    <p>首次运行会导入数据库，请确保你的MongoDB配置正确（连接时使用默认ip和端口，如果你修改过这两项内容请先往下看）</p>
+    <p>导入完成会有提示，请勿在导入时关闭程序（如果不小心关闭了，请删除整个数据库重新导入）</p>
+</div>
 `
 
 var inner_s3=`
