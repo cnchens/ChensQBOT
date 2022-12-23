@@ -5,6 +5,8 @@ var inner_s1=`
 `
 
 var inner_s2=`
+<h2>安装</h2>
+<hr>
 <div class="alert alert-danger alert_div">
     <p>注意：目前仅提供Windows x86_64系统的执行程序，需要适配其他系统请自行下载源码</p>
 </div>

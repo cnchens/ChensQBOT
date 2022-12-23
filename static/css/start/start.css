@@ -8,6 +8,7 @@
     width: 20vh;
     height: 100%;
     overflow-y: auto;
+    position: relative;
 }
 
 .article{
