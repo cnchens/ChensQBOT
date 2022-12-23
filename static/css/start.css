@@ -29,3 +29,8 @@
     width: 300px;
     height: auto;
 }
+
+.text_iframe{
+    width: 100%;
+    height: 100%;
+}
