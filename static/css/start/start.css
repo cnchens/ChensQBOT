@@ -10,6 +10,15 @@
     overflow-y: auto;
 }
 
+.sc_btn{
+    text-align: center;
+}
+
+.sc_a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
 .article{
     flex: 1;
     height: 100%;
@@ -23,11 +32,6 @@
     width: 3px;
     height: 100%;
     color: rgb(80, 80, 80);
-}
-
-.s2_alert1{
-    width: 300px;
-    height: auto;
 }
 
 #screen_text{
