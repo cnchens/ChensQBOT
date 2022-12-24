@@ -17,7 +17,7 @@ var inner_s3=`
 <hr>
 <p>本小节只会介绍部分JSON配置的方法，完整版请至<a href="https://cnchens.github.io/ChensBOT/templates/advanced.html">进阶</a>查看</p>
 <p>打开config.json（在根目录中），有以下几行代码需要特别注意：</p>
-<pre class="prettyprint linenums">
+<pre class="prettyprint linenums code_screen">
     "mdb_conn" : "mongodb://127.0.0.1:27017/", 
 
     "superusers" : [114514], 

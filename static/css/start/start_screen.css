@@ -1,5 +1,9 @@
 .alert_div{
-    width: 50vh;
+    width: 100vh;
     height: auto;
     margin: 0 auto;
+}
+
+.code_screen{
+    text-align: left;
 }
