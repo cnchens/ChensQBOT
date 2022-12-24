@@ -9,7 +9,7 @@ var inner_s2=`
 <hr>
 <p><div class="alert alert-danger alert_div"><p>注意：目前仅提供Windows x86_64系统的执行程序，需要适配其他系统请自行下载源码</p></div></p>
 <p>在安装前请确认已经配置好Python3.7+和MongoDB环境，在<a href="https://github.com/cnchens/ChensBOT/releases">Releases</a>中下载最新的压缩包并解压</p>
-<p>确保你的pip配置正确，运行modinstall.bat，等待安装完成</p>
+<p>确保你的pip配置正确，运行modinstall.bat，等待安装完成，进入下一步</p>
 `
 
 var inner_s3=`
