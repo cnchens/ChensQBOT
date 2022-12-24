@@ -7,21 +7,9 @@ var inner_s1=`
 var inner_s2=`
 <h2>安装</h2>
 <hr>
-<p>
-    <div class="alert alert-danger alert_div">
-        <p>注意：目前仅提供Windows x86_64系统的执行程序，需要适配其他系统请自行下载源码</p>
-    </div>
-</p>
-<p>在安装前请确认已经配置好Python3.7+和MongoDB环境</p>
-<p>在<a href="https://github.com/cnchens/ChensBOT/releases">Releases</a>中下载最新的压缩包并解压</p>
-<p>如果不需要额外配置的话，首先运行modinstall.bat等待安装完成</p>
-<p>然后分别运行pystart.bat和cqstart.bat</p>
-<p>
-    <div class="alert alert-warning alert_div">
-        <p>首次运行会导入数据库，请确保你的MongoDB配置正确（连接时使用默认ip和端口，如果你修改过这两项内容请先往下看）</p>
-        <p>导入完成会有提示，请勿在导入时关闭程序（如果不小心关闭了，请删除整个数据库重新导入）</p>
-    </div>
-</p>
+<p><div class="alert alert-danger alert_div"><p>注意：目前仅提供Windows x86_64系统的执行程序，需要适配其他系统请自行下载源码</p></div></p>
+<p>在安装前请确认已经配置好Python3.7+和MongoDB环境，在<a href="https://github.com/cnchens/ChensBOT/releases">Releases</a>中下载最新的压缩包并解压</p>
+<p>确保你的pip配置正确，运行modinstall.bat，等待安装完成</p>
 `
 
 var inner_s3=`
