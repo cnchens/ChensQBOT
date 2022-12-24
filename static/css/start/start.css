@@ -5,8 +5,8 @@
 }
 
 .aside{
-    width: 28vh;
-    height: 100%;
+    width: 30vw;
+    height: auto;
     overflow-y: auto;
 }
 
@@ -19,19 +19,11 @@
     color: rgb(255, 255, 255);
 }
 
-.mid_line{
-    border: 2vh;
-    float: left;
-    width: 2vh;
-    height: 100%;
-    color: rgb(255, 255, 255);
-}
-
 .article{
     flex: 1;
-    height: 100%;
+    height: auto;
     overflow-y: auto;
-    margin-left: 30vh;
+    margin-left: 30vw;
 }
 
 #screen_text{

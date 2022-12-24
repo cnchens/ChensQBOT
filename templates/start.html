@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cnchens.github.io/ChensBOT/bootstrap-3.4.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cnchens.github.io/ChensBOT/bootstrap-5.2.3-dist/css/bootstrap.min.css">
     <script src="https://cnchens.github.io/ChensBOT/jquery-3.6.2/jquery-3.6.2.min.js"></script>
-    <script src="https://cnchens.github.io/ChensBOT/bootstrap-3.4.1-dist/js/bootstrap.min.js"></script>
+    <script src="https://cnchens.github.io/ChensBOT/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cnchens.github.io/ChensBOT/static/css/global.css">
     <link rel="stylesheet" href="https://cnchens.github.io/ChensBOT/static/css/start/start.css">
     <title>ChensBOT|开始</title>
@@ -47,11 +47,12 @@
                 <a href="#" class="sc_a" id="section-5"><h3>运行</h3></a>
             </div>
         </aside>
-        <div class="mid_line"></div>
         <article class="article">
             <div id="screen_text"></div>
             <script src="https://cnchens.github.io/ChensBOT/static/js/start/start_screen.js "></script>
             <link rel="stylesheet" href="https://cnchens.github.io/ChensBOT/static/css/start/start_screen.css">
+            <link rel="stylesheet" href="https://cnchens.github.io/ChensBOT/google-code-prettify/styles/sunburst.css">
+            <script src="https://cnchens.github.io/ChensBOT/google-code-prettify/js-modules/prettify.js"></script> 
         </article>
     </div>
 </body>
@@ -60,6 +61,62 @@
 <h2>JSON配置</h2>
 <hr>
 <p>本小节只会介绍部分JSON配置的方法，完整版请至<a href="https://cnchens.github.io/ChensBOT/templates/advanced.html">进阶</a>查看</p>
+<p>打开config.json（在根目录中），有以下几行代码需要特别注意：</p>
+<pre class="prettyprint linenums">
+    "mdb_conn" : "mongodb://127.0.0.1:27017/", 
+
+    "superusers" : [114514], 
+    "cmd_start" : [""], 
+    "host" : "127.0.0.1", 
+    "port" : "32808", 
+    "api_root" : "http://127.0.0.1:32808", 
+</pre>
+<p>这几行的配置方法在下表中已经列出来了</p>
+<table class="table table-dark table-striped">
+    <thead>
+        <tr>
+            <th>键名称</th>
+            <th>值类型</th>
+            <th>值默认数据</th>
+            <th>备注</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>mdb_conn</td>
+            <td>superusers</td>
+            <td>cmd_start</td>
+            <td>host</td>
+            <td>port</td>
+            <td>api_root</td>
+        </tr>
+        <tr>
+            <td>str</td>
+            <td>set</td>
+            <td>str</td>
+            <td>str</td>
+            <td>str</td>
+            <td>str</td>
+        </tr>
+        <tr>
+            <td>mongodb://127.0.0.1:27017/</td>
+            <td>空</td>
+            <td>空</td>
+            <td>127.0.0.1</td>
+            <td>32808</td>
+            <td>http://127.0.0.1:32808</td>
+        </tr>
+        <tr>
+            <td>MongoDB连接url</td>
+            <td>超级用户</td>
+            <td>命令起始字符</td>
+            <td>go-cqhttp连接ip</td>
+            <td>go-cqhttp连接端口</td>
+            <td>nonebot_api连接url</td>
+        </tr>
+    </tbody>
+</table>
+
 
 
 
