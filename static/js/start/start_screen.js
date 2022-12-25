@@ -15,7 +15,7 @@ var inner_s2=`
 var inner_s3=`
 <h2>JSON配置</h2>
 <hr>
-<p>本小节只会介绍部分JSON配置的方法，完整版请至<a href="https://cnchens.github.io/ChensBOT/templates/advanced.html">进阶</a>查看</p>
+<p>本小节只会介绍部分JSON配置的方法，完整版请至<a href="https://cnchens.github.io/ChensBOT/templates/advanced/advanced.html">进阶</a>查看</p>
 <p>打开config.json（在根目录中），有以下几行代码需要特别注意：</p>
 <pre class="prettyprint linenums code_screen">
 "mdb_conn" : "mongodb://127.0.0.1:27017/", 
@@ -92,7 +92,7 @@ var inner_s5=`
 <p>运行根目录中的pyrun.bat和cqstart.bat，成功运行时应该与下图相似</p>
 <img src="https://cnchens.github.io/ChensBOT/static/image/start/run_ok.png" class="img-fluid">
 <p>至此，ChensBOT的基本配置就完成了，接下来，在私聊界面输入allcmd（或在群聊界面@机器人名称 allcmd）即可查看所有可用的指令</p>
-<p>如需进行更深入的配置，请移步<a href="https://cnchens.github.io/ChensBOT/templates/advanced.html">进阶</a></p>
+<p>如需进行更深入的配置，请移步<a href="https://cnchens.github.io/ChensBOT/templates/advanced/advanced.html">进阶</a></p>
 `
 
 document.getElementById("screen_text").innerHTML=inner_s1;
