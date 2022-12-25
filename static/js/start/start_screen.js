@@ -7,7 +7,7 @@ var inner_s1=`
 var inner_s2=`
 <h2>安装</h2>
 <hr>
-<p><div class="alert alert-danger alert_div">注意：目前仅提供Windows x86_64系统的执行程序，需要适配其他系统请自行下载源码</div></p>
+<div class="alert alert-danger alert_div">注意：目前仅提供Windows x86_64系统的执行程序，需要适配其他系统请自行下载源码</div>
 <p>在安装前请确认已经配置好Python3.7+和MongoDB环境，在<a href="https://github.com/cnchens/ChensBOT/releases">Releases</a>中下载最新的压缩包并解压</p>
 <p>确保你的pip配置正确，运行modinstall.bat，等待安装完成，进入下一步</p>
 `
@@ -78,7 +78,12 @@ var inner_s3=`
 `
 
 var inner_s4=`
-inner_s4
+<h2>MongoDB配置</h2>
+<hr>
+<p>一般情况下，在配置完config.json后，就不必对MongoDB再做太多的配置</p>
+<p>建议安装MongoDBCompass，以便对MongoDB数据进行修改</p>
+<p>运行pyrun.bat，首次运行会导入数据库，请耐心等待数据库导入完成（耗时根据硬盘性能而定）</p>
+<div class="alert alert-danger alert_div">请勿在导入时关闭程序（如果不小心关闭了，请删除整个数据库重新导入）</div>
 `
 
 var inner_s5=`
