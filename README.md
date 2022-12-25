@@ -1,7 +1,5 @@
 # ChensBOT
-基于Nonebot开发的QQ群机器人
-<br>
-学业繁忙，可能更新会慢点
+基于Nonebot开发的多功能群机器人
 
 # 某些链接
 赞助：https://afdian.net/a/cnchens
