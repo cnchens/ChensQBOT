@@ -18,7 +18,6 @@
 
     "enable_allcmd" : "true", 
     "enable_time" : "true", 
-    "enable_passwords" : "true", 
     "enable_finder" : "true", 
     "enable_rdsfz" : "true", 
     "enable_tfish" : "true", 
