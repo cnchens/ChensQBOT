@@ -1,6 +1,7 @@
 {
     "mdb_conn" : "mongodb://192.168.1.114:27017/", 
 
+    "debug" : true, 
     "superusers" : [], 
     "cmd_start" : [""], 
     "host" : "127.0.0.1", 

@@ -36,23 +36,23 @@ async def _(session: CommandSession):
     if enable_allcmd == 'true':
         req_qid = str(session.event.user_id)
         await session.send(
-            f'''
-            [CQ:at,qq={req_qid}]All Commands
+f'''
+[CQ:at,qq={req_qid}]All Commands
 
-            用法：@Chens_QBOT [命令]
+用法：@Chens_QBOT [命令]
 
-            命令：
-            基本：
-                allcmd      显示本命令
-                time        显示当前时间
-            查询类：
-                finder      查询各种数据
-                rdsfz       随机身份证
-                tfish       摸鱼
-            R18：
-                handrush    是否手冲
-                rdsimg      随机涩图
-            '''.strip()
+命令：
+基本：
+    allcmd      显示本命令
+    time        显示当前时间
+查询类：
+    finder      查询各种数据
+    rdsfz       随机身份证
+    tfish       摸鱼
+R18：
+    handrush    是否手冲
+    rdsimg      随机涩图
+'''.strip()
         )
     elif enable_allcmd == 'false':
         pass
@@ -97,44 +97,44 @@ async def _(session: CommandSession):
             s_msg = (
                 await session.aget(
                     prompt=f'''
-                    [CQ:at,qq={req_qid}]查询内容不能为空
-                    使用示例：
-                        @Chens_QBOT finder [MODE] [INFO]
+[CQ:at,qq={req_qid}]查询内容不能为空
+使用示例：
+    @Chens_QBOT finder [MODE] [INFO]
 
-                    MODE：查找模式（必需）
-                        q2p 通过QQ号查询密保手机
-                        p2q 手机号查询绑定QQ
-                        q2l QQ号查询LOL信息
-                        l2q LOL查询QQ信息
-                        q2pwd QQ号查询老密
-                        w2p 微博通过ID查手机号
-                        p2w 微博通过手机号查ID
-                        sms 短轰
+MODE：查找模式（必需）
+    q2p 通过QQ号查询密保手机
+    p2q 手机号查询绑定QQ
+    q2l QQ号查询LOL信息
+    l2q LOL查询QQ信息
+    q2pwd QQ号查询老密
+    w2p 微博通过ID查手机号
+    p2w 微博通过手机号查ID
+    sms 短轰
 
-                    INFO：要查询的信息（必需）
-                        一般为qid或手机号
-                    '''.strip()
+INFO：要查询的信息（必需）
+    一般为qid或手机号
+'''.strip()
                 ))
             while not s_msg:
                 await session.aget(
                     prompt=f'''
-                    [CQ:at,qq={req_qid}]查询内容不能为空
-                    使用示例：
-                        @Chens_QBOT finder [MODE] [INFO]
+[CQ:at,qq={req_qid}]查询内容不能为空
+使用示例：
+    @Chens_QBOT finder [MODE] [INFO]
 
-                    MODE：查找模式（必需）
-                        q2p 通过QQ号查询密保手机
-                        p2q 手机号查询绑定QQ
-                        q2l QQ号查询LOL信息
-                        l2q LOL查询QQ信息
-                        q2pwd QQ号查询老密
-                        w2p 微博通过ID查手机号
-                        p2w 微博通过手机号查ID
-                        sms 短轰
+MODE：查找模式（必需）
+    q2p 通过QQ号查询密保手机
+    p2q 手机号查询绑定QQ
+    q2l QQ号查询LOL信息
+    l2q LOL查询QQ信息
+    q2pwd QQ号查询老密
+    w2p 微博通过ID查手机号
+    p2w 微博通过手机号查ID
+    sms 短轰
 
-                    INFO：要查询的信息（必需）
-                        一般为qid或手机号
-                    '''.strip()
+INFO：要查询的信息（必需）
+    一般为qid或手机号
+'''.strip()
                 )
 
         sp_msg = s_msg.split()
@@ -142,23 +142,23 @@ async def _(session: CommandSession):
         if len(sp_msg) == 1:
             await session.send(
                     f'''
-                    [CQ:at,qq={req_qid}]INFO不能为空
-                    使用示例：
-                        @Chens_QBOT finder [MODE] [INFO]
+[CQ:at,qq={req_qid}]INFO不能为空
+使用示例：
+@Chens_QBOT finder [MODE] [INFO]
 
-                    MODE：查找模式（必需）
-                        q2p 通过QQ号查询密保手机
-                        p2q 手机号查询绑定QQ
-                        q2l QQ号查询LOL信息
-                        l2q LOL查询QQ信息
-                        q2pwd QQ号查询老密
-                        w2p 微博通过ID查手机号
-                        p2w 微博通过手机号查ID
-                        sms 短轰
+MODE：查找模式（必需）
+    q2p 通过QQ号查询密保手机
+    p2q 手机号查询绑定QQ
+    q2l QQ号查询LOL信息
+    l2q LOL查询QQ信息
+    q2pwd QQ号查询老密
+    w2p 微博通过ID查手机号
+    p2w 微博通过手机号查ID
+    sms 短轰
 
-                    INFO：要查询的信息（必需）
-                        一般为qid或手机号
-                    '''.strip()
+INFO：要查询的信息（必需）
+    一般为qid或手机号
+'''.strip()
                 )
 
         elif len(sp_msg) == 2:
@@ -331,45 +331,45 @@ async def _(session: CommandSession):
 
             else:
                 await session.send(
-                    f'''
-                    [CQ:at,qq={req_qid}]参数错误
-                    使用示例：
-                        @Chens_QBOT finder [MODE] [INFO]
+f'''
+[CQ:at,qq={req_qid}]参数错误
+使用示例：
+    @Chens_QBOT finder [MODE] [INFO]
 
-                    MODE：查找模式（必需）
-                        q2p 通过QQ号查询密保手机
-                        p2q 手机号查询绑定QQ
-                        q2l QQ号查询LOL信息
-                        l2q LOL查询QQ信息
-                        q2pwd QQ号查询老密
-                        w2p 微博通过ID查手机号
-                        p2w 微博通过手机号查ID
-                        sms 短轰
+MODE：查找模式（必需）
+    q2p 通过QQ号查询密保手机
+    p2q 手机号查询绑定QQ
+    q2l QQ号查询LOL信息
+    l2q LOL查询QQ信息
+    q2pwd QQ号查询老密
+    w2p 微博通过ID查手机号
+    p2w 微博通过手机号查ID
+    sms 短轰
 
-                    INFO：要查询的信息（必需）
-                        一般为qid或手机号
-                    '''.strip()
+INFO：要查询的信息（必需）
+    一般为qid或手机号
+'''.strip()
                 )
         else:
             await session.send(
-                    f'''
-                    [CQ:at,qq={req_qid}]参数错误
-                    使用示例：
-                        @Chens_QBOT finder [MODE] [INFO]
+f'''
+[CQ:at,qq={req_qid}]参数错误
+使用示例：
+    @Chens_QBOT finder [MODE] [INFO]
 
-                    MODE：查找模式（必需）
-                        q2p 通过QQ号查询密保手机
-                        p2q 手机号查询绑定QQ
-                        q2l QQ号查询LOL信息
-                        l2q LOL查询QQ信息
-                        q2pwd QQ号查询老密
-                        w2p 微博通过ID查手机号
-                        p2w 微博通过手机号查ID
-                        sms 短轰
+MODE：查找模式（必需）
+    q2p 通过QQ号查询密保手机
+    p2q 手机号查询绑定QQ
+    q2l QQ号查询LOL信息
+    l2q LOL查询QQ信息
+    q2pwd QQ号查询老密
+    w2p 微博通过ID查手机号
+    p2w 微博通过手机号查ID
+    sms 短轰
 
-                    INFO：要查询的信息（必需）
-                        一般为qid或手机号
-                    '''.strip()
+INFO：要查询的信息（必需）
+    一般为qid或手机号
+'''.strip()
                 )
     elif enable_finder == 'false':
         pass
