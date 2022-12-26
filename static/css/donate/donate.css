@@ -1,7 +1,11 @@
 .afdian_url{
-    text-align: left;
+    text-align: center;
     text-decoration: none;
     color: rgb(255, 255, 255);
+}
+
+.img_div{
+    text-align: center;
 }
 
 .img_l{
