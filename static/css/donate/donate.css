@@ -1,0 +1,15 @@
+.afdian_url{
+    text-align: center;
+}
+
+.img_l{
+    text-align: left;
+    width: 50vh;
+    height: auto;
+}
+
+.img_r{
+    text-align: right;
+    width: 50vh;
+    height: auto;
+}
