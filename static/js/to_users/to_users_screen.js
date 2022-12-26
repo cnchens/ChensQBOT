@@ -18,7 +18,7 @@ inner_s2=`
 <div class="alert alert-danger alert_div">
     <strong>以下是本章中出现的一些特殊字符（如你已经掌握，可以跳过）</strong>
     <p>cq码的使用，请至<a href="https://docs.go-cqhttp.org/cqcode/#%E8%BD%AC%E4%B9%89" target="_blank">go-cqhttp 帮助中心 -&gt; CQ 码 / CQ Code</a>查看</p>
-    <p>Python常见转义字符：\n 代表换行符；\t 代表横向跳格；\\ 代表反斜杠；\" 代表双引号；\' 代表单引号；\r代表回车；\b代表退格</p>
+    <p>Python常见转义字符：&#92n 代表换行符；&#92t 代表横向跳格；&#92&#92 代表反斜杠；&#92" 代表双引号；&#92' 代表单引号；&#92r代表回车；&#92b代表退格</p>
     <p>pytz日期转义字符：%Y = 年， %m = 月， %d = 日， %H = 时， %M = 分， %S = 秒</p>
     <p>ChensBOT自定义变量：req_qid = 执行本命令的用户QQ号</p>
 </div>
