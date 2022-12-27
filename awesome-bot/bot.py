@@ -17,6 +17,7 @@ if 'QBOT_DB' not in dblist:
     time.sleep(3)
     
     db = client['QBOT_DB']
+
     apiuse_col = db['api_use_time']
     apiuse_dict = [
         {'api_name' : 'handrush', 'today' : '0', 'total' : '0'}, 
@@ -24,15 +25,13 @@ if 'QBOT_DB' not in dblist:
         {'api_name' : 'rdsfz', 'today' : '0', 'total' : '0'}, 
         {'api_name' : 'finder', 'today' : '0', 'total' : '0'}
     ]
-    apiuse_upload = apiuse_col.insert_many(apiuse_dict)
-    print('apiuse导入成功')
-    time.sleep(0.5)
+    apiuse_col.insert_many(apiuse_dict)
+    print('导入1/6')
 
     handrush_col = db['handrush']
-    handrush_dict = {'qid' : '114514', 'today_rush' : '0', 'total_rush' : '0'}
-    handrush_upload = handrush_col.insert_one(handrush_dict)
-    print('handrush导入成功')
-    time.sleep(0.5)
+    handrush_dict = {'qid' : 'x', 'today_rush' : 'x', 'total_rush' : 'x'}
+    handrush_col.insert_one(handrush_dict)
+    print('导入2/6')
 
     sfz_col = db['sfz']
     f = open('./awesome-bot/awesome/static/text/新8000w身份证.txt', 'r', encoding='UTF-8')
@@ -40,11 +39,37 @@ if 'QBOT_DB' not in dblist:
     for i in f:
         n = n + 1
         sfz_dict = {'sfz_num' : n, 'sfz_info' : i}
-        sfz_upload = sfz_col.insert_one(sfz_dict)
-        print(sfz_dict)
-    print('sfz导入成功')
-    time.sleep(0.5)
-    time.sleep(3)
+        sfz_col.insert_one(sfz_dict)
+    print('导入3/6')
+
+    grpmembers_col = db['kick']
+    grpmembers_dict = {
+                'join_time' : 'x', 
+                'grp' : 'x', 
+                'status' : 'x', 
+                'qid' : 'x', 
+                'qqlm' : 'x', 
+                'phone' : 'x',
+                'phone_location' : 'x', 
+                'weibo' : 'x', 
+                'lol' : 'x', 
+                'real_name' : 'x', 
+                'sfz' : 'x', 
+                'home_location' : 'x', 
+                'else' : 'x'
+            }
+    grpmembers_col.insert_one(grpmembers_dict)
+    print('导入4/6')
+
+    kick_col = db['kick']
+    kick_dict = {'kick_time' : 'x', 'kick_grp' : 'x', 'kick_qid' : 'x', 'kick_reason' : 'x'}
+    kick_col.insert_one(kick_dict)
+    print('导入5/6')
+
+    ban_col = db['kick']
+    ban_dict = {'kick_time' : 'x', 'kick_grp' : 'x', 'kick_qid' : 'x', 'kick_reason' : 'x'}
+    ban_col.insert_one(ban_dict)
+    print('导入6/6')
 
     print('导入完成')
 else:
