@@ -48,11 +48,13 @@ async def _(session: NoticeSession):
                 kick_grpid = session.event.group_id
                 kick_qid = session.event.user_id
                 time.sleep(1)
-                bot.set_group_kick(group_id=kick_grpid, user_id=kick_qid)
+                await bot.set_group_kick(group_id=kick_grpid, user_id=kick_qid)
 
                 gmt8 = 'Asia/Shanghai'
                 gmt8_time = datetime.datetime.now(tz=pytz.timezone(gmt8)).strftime('%Y-%m-%d %H:%M:%S')
 
+                kick_grpid = str(kick_grpid)
+                kick_qid = str(kick_qid)
                 up_dict = {
                     'kick_time' : gmt8_time, 
                     'kick_grp' : kick_grpid, 
