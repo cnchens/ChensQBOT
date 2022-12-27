@@ -42,7 +42,7 @@ if 'QBOT_DB' not in dblist:
         sfz_col.insert_one(sfz_dict)
     print('导入3/6')
 
-    grpmembers_col = db['kick']
+    grpmembers_col = db['grp_members']
     grpmembers_dict = {
                 'join_time' : 'x', 
                 'grp' : 'x', 
@@ -61,13 +61,13 @@ if 'QBOT_DB' not in dblist:
     grpmembers_col.insert_one(grpmembers_dict)
     print('导入4/6')
 
-    kick_col = db['kick']
+    kick_col = db['kicklist']
     kick_dict = {'kick_time' : 'x', 'kick_grp' : 'x', 'kick_qid' : 'x', 'kick_reason' : 'x'}
     kick_col.insert_one(kick_dict)
     print('导入5/6')
 
-    ban_col = db['kick']
-    ban_dict = {'kick_time' : 'x', 'kick_grp' : 'x', 'kick_qid' : 'x', 'kick_reason' : 'x'}
+    ban_col = db['banlist']
+    ban_dict = {'ban_time' : 'x', 'ban_grp' : 'x', 'ban_qid' : 'x', 'ban_reason' : 'x'}
     ban_col.insert_one(ban_dict)
     print('导入6/6')
 
