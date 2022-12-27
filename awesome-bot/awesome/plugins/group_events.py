@@ -7,6 +7,8 @@ import pymongo
 import ast
 import datetime
 import pytz
+import nonebot
+import time
 
 f = open('config.json', 'r', encoding='utf-8')# 读取config
 json_res = json.load(f)
@@ -17,10 +19,14 @@ mdb_conn = json_res['mdb_conn']# mongodb连接地址
 client = pymongo.MongoClient(mdb_conn)
 db = client['QBOT_DB']# 数据库名称
 grp_col = db['grp_members']
+ban_col = db['banlist']
+kick_col = db['kicklist']
 
 # 入群
 @on_notice('group_increase')
 async def _(session: NoticeSession):
+    bot = nonebot.get_bot()
+
     notice_group_increase = json_res['notice_group_increase']
     group_increase_dict_enable = notice_group_increase['enable']
     group_increase_dict_method = notice_group_increase['method']
@@ -35,7 +41,30 @@ async def _(session: NoticeSession):
         group_increase_dict_method = notice_group_increase['method']
         group_increase_dict_notice_msg = notice_group_increase['notice_msg']
 
-        if group_increase_dict_enable == 'true':
+        for i in ban_col.find():
+            at_qid = str(session.event.user_id)
+            if at_qid in i['ban_qid']:
+                await session.send(f'[CQ:at,qq={at_qid}]自动踢出：您已经被本群封禁，如需解除请联系群主或群管理员！')
+                kick_grpid = session.event.group_id
+                kick_qid = session.event.user_id
+                time.sleep(1)
+                bot.set_group_kick(group_id=kick_grpid, user_id=kick_qid)
+
+                gmt8 = 'Asia/Shanghai'
+                gmt8_time = datetime.datetime.now(tz=pytz.timezone(gmt8)).strftime('%Y-%m-%d %H:%M:%S')
+
+                up_dict = {
+                    'kick_time' : gmt8_time, 
+                    'kick_grp' : kick_grpid, 
+                    'kick_qid' : kick_qid, 
+                    'kick_reason' : 'Automatic Kick by banlist'
+                }
+
+                kick_col.insert_one(up_dict)
+                break
+            else:
+                pass
+
             if group_increase_dict_method == 'special':
                 pass
             elif group_increase_dict_method == 'basic':
