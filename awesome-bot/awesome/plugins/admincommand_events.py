@@ -102,7 +102,7 @@ async def _(session: CommandSession):
                     f'''
 [CQ:at,qq={req_qid}]
 语法错误，示例：
-/adminkick [GRPID] [QID] [REASON]
+/adminban [GRPID] [QID] [REASON]
 '''.strip()
                 )
             else:
