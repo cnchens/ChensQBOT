@@ -11,36 +11,12 @@ mdb_conn = json_res['mdb_conn']# mongodb连接地址
 
 client = pymongo.MongoClient(mdb_conn)# mongodb连接地址
 dblist = client.list_database_names()
-if 'QBOT_DB' not in dblist:
+if 'BANBOT' not in dblist:
     print('首次运行，准备创建数据库')
     print('三秒后开始导入，请等待提示导入完成')
     time.sleep(3)
     
-    db = client['QBOT_DB']
-
-    apiuse_col = db['api_use_time']
-    apiuse_dict = [
-        {'api_name' : 'handrush', 'today' : '0', 'total' : '0'}, 
-        {'api_name' : 'rdsimg', 'today' : '0', 'total' : '0'}, 
-        {'api_name' : 'rdsfz', 'today' : '0', 'total' : '0'}, 
-        {'api_name' : 'finder', 'today' : '0', 'total' : '0'}
-    ]
-    apiuse_col.insert_many(apiuse_dict)
-    print('导入1/6')
-
-    handrush_col = db['handrush']
-    handrush_dict = {'qid' : 'x', 'today_rush' : 'x', 'total_rush' : 'x'}
-    handrush_col.insert_one(handrush_dict)
-    print('导入2/6')
-
-    sfz_col = db['sfz']
-    f = open('./awesome-bot/awesome/static/text/新8000w身份证.txt', 'r', encoding='UTF-8')
-    n = 0
-    for i in f:
-        n = n + 1
-        sfz_dict = {'sfz_num' : n, 'sfz_info' : i}
-        sfz_col.insert_one(sfz_dict)
-    print('导入3/6')
+    db = client['BANBOT']
 
     grpmembers_col = db['grp_members']
     grpmembers_dict = {
@@ -59,17 +35,17 @@ if 'QBOT_DB' not in dblist:
                 'else' : 'x'
             }
     grpmembers_col.insert_one(grpmembers_dict)
-    print('导入4/6')
+    print('导入1/3')
 
     kick_col = db['kicklist']
-    kick_dict = {'kick_time' : 'x', 'kick_grp' : 'x', 'kick_qid' : 'x', 'kick_reason' : 'x'}
+    kick_dict = {'kick_time' : 'x', 'kick_grp' : 'x', 'kick_qid' : 'x', 'kick_reason' : 'x', 'performer' : 'x'}
     kick_col.insert_one(kick_dict)
-    print('导入5/6')
+    print('导入2/3')
 
     ban_col = db['banlist']
-    ban_dict = {'ban_time' : 'x', 'ban_grp' : 'x', 'ban_qid' : 'x', 'ban_reason' : 'x'}
+    ban_dict = {'ban_time' : 'x', 'ban_grp' : 'x', 'ban_qid' : 'x', 'ban_reason' : 'x', 'performer' : 'x'}
     ban_col.insert_one(ban_dict)
-    print('导入6/6')
+    print('导入3/3')
 
     print('导入完成')
 else:
