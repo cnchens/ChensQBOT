@@ -29,7 +29,8 @@ async def _(session: NoticeSession):
     at_qid = str(session.event.user_id)
     for i in ban_col.find():
         if at_qid in i['ban_qid']:
-            await session.send(f'[CQ:at,qq={at_qid}]自动踢出：您已经被本群封禁，如需解除请联系群主或群管理员！')
+            ban_reason = i['ban_reason']
+            await session.send(f'[CQ:at,qq={at_qid}]BANBOT联合封禁：您已经被封禁，如有疑问请联系该群群主或群管理员！\n封禁原因：{ban_reason}')
             kick_grpid = session.event.group_id
             kick_qid = session.event.user_id
             time.sleep(1)
