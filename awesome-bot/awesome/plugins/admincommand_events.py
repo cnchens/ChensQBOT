@@ -159,6 +159,23 @@ async def _(session: CommandSession):
 
                     await session.send(f'[CQ:at,qq={req_qid}]Ban Success')
             except:
-                await session.send(f'[CQ:at,qq={req_qid}]Ban Error')
+                gmt8 = 'Asia/Shanghai'
+                gmt8_time = datetime.datetime.now(tz=pytz.timezone(gmt8)).strftime('%Y-%m-%d %H:%M:%S')
+
+                todo_grpid = s_msg[0]
+                todo_qid = s_msg[1]
+                reason = s_msg[2]
+
+                up_dict = {
+                    'ban_time' : gmt8_time, 
+                    'ban_grp' : todo_grpid, 
+                    'ban_qid' : todo_qid, 
+                    'ban_reason' : reason, 
+                    'performer' : req_qid
+                }
+
+                ban_col.insert_one(up_dict)
+
+                await session.send(f'[CQ:at,qq={req_qid}]Ban Error, but also added to ban_col')
     else:
         pass
