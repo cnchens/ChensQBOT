@@ -1,3 +1,5 @@
+# 此项目不再更新，请移步至新的[ChensQBOTv2](https://github.com/cnchens/ChensQBOTv2)
+
 # ChensBOT
 基于Nonebot开发的多功能群机器人
 
